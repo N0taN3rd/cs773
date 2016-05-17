@@ -1,2 +1,9 @@
 # weka
 weka-3-8-0/
+
+# latex build
+build/
+*.aux
+*.log
+*.out
+*.gz
