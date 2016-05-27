@@ -96,26 +96,95 @@ A) As seen in the tables below the correct rule choice is Weight.
 % \usepackage{multirow}
 \begin{table}[]
 \centering
+\begin{tabu}{c|ccc|cll}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Color}} & \multicolumn{3}{c|}{Cost} & \multicolumn{3}{c|}{\multirow{2}{*}{$P\left(Color\right)$}} \\
+\multicolumn{1}{|c|}{} & Low & Medium & High & \multicolumn{3}{c|}{} \\ \hline
+\multicolumn{1}{|c|}{Red} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{1} & 1 & \multicolumn{3}{c|}{$\rfrac{4}{14}$} \\
+\multicolumn{1}{|c|}{Black} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{1} & 1 & \multicolumn{3}{c|}{$\rfrac{3}{14}$} \\
+\multicolumn{1}{|c|}{Blue} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & 1 & \multicolumn{3}{c|}{$\rfrac{4}{14}$} \\
+\multicolumn{1}{|c|}{Pink} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & 1 & \multicolumn{3}{c|}{$\rfrac{3}{14}$} \\ \hline
+\multicolumn{4}{|c|}{$P\left(Cost|Color\right)$} &  & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{1-4}
+\multicolumn{1}{|c|}{Red} & \multicolumn{1}{c|}{$\rfrac{2}{6}$} & \multicolumn{1}{c|}{$\rfrac{1}{4}$} & $\rfrac{1}{4}$ &  & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{|c|}{Black} & \multicolumn{1}{c|}{$\rfrac{2}{6}$} & \multicolumn{1}{c|}{$\rfrac{1}{4}$} & $\rfrac{1}{4}$ & \multicolumn{1}{l}{} &  &  \\
+\multicolumn{1}{|c|}{Blue} & \multicolumn{1}{c|}{$\rfrac{1}{6}$} & \multicolumn{1}{c|}{$\rfrac{1}{4}$} & $\rfrac{1}{4}$ & \multicolumn{1}{l}{} &  &  \\
+\multicolumn{1}{|c|}{Pink} & \multicolumn{1}{c|}{$\rfrac{1}{6}$} & \multicolumn{1}{c|}{$\rfrac{1}{4}$} & $\rfrac{1}{4}$ & \multicolumn{1}{l}{} &  &  \\ \cline{1-4}
+ & \multicolumn{1}{c|}{$\rfrac{6}{14}$} & \multicolumn{1}{c|}{$\rfrac{4}{14}$} & $\rfrac{4}{14}$ & \multicolumn{1}{l}{} &  &  \\ \cline{2-4}
+\multicolumn{1}{l|}{} & \multicolumn{3}{c|}{$P\left(Cost\right)$} & \multicolumn{1}{l}{} &  &  \\ \cline{2-4}
+\end{tabu}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+\centering
+\caption{My caption}
+
+\begin{tabu}{|c|c|c|c|}
+\hline
+Price  & Count & Prob           & Entropy                  \\ \hline
+Low    & 6     & $\rfrac{6}{14}$ & \multirow{3}{*}{1.55666} \\ \cline{1-3}
+Medium & 4     & $\rfrac{4}{14}$ &                          \\ \cline{1-3}
+High   & 4     & $\rfrac{4}{14}$ &                          \\ \hline
+\end{tabu}
+\end{table}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+\centering
 \caption{My caption}
 \label{my-label}
-\begin{tabular}{cccccll}
+\begin{tabu}{|c|c|c|c|c|}
 \hline
-\multicolumn{1}{|c|}{\multirow{2}{*}{Color}} & \multicolumn{3}{c|}{Cost} & \multicolumn{3}{c|}{\multirow{2}{*}{$P\left(Weight\right)$}} \\
-\multicolumn{1}{|c|}{} & Low & Medium & \multicolumn{1}{c|}{High} & \multicolumn{3}{c|}{} \\ \hline
-\multicolumn{1}{|c|}{Red} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{3}{c|}{$\rfrac{4}{14}$} \\
-\multicolumn{1}{|c|}{Black} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{3}{c|}{$\rfrac{4}{14}$} \\
-\multicolumn{1}{|c|}{Blue} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{3}{c|}{$\rfrac{6}{14}$} \\
-\multicolumn{1}{|c|}{Pink} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{3}{c|}{} \\ \hline
-\multicolumn{4}{|c|}{$P\left(Cost|Color\right)$} &  & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{1-4}
-\multicolumn{1}{|c|}{Red} & \multicolumn{1}{c|}{$\rfrac{1}{6}$} & \multicolumn{1}{c|}{$\rfrac{0}{4}$} & \multicolumn{1}{c|}{$\rfrac{3}{4}$} &  & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
-\multicolumn{1}{|c|}{Black} & \multicolumn{1}{c|}{$\rfrac{0}{6}$} & \multicolumn{1}{c|}{$\rfrac{4}{4}$} & \multicolumn{1}{c|}{$\rfrac{0}{4}$} & \multicolumn{1}{l}{} &  &  \\
-\multicolumn{1}{|c|}{Blue} & \multicolumn{1}{c|}{$\rfrac{5}{6}$} & \multicolumn{1}{c|}{$\rfrac{0}{4}$} & \multicolumn{1}{c|}{$\rfrac{1}{4}$} & \multicolumn{1}{l}{} &  &  \\ \cline{1-4}
-\multicolumn{1}{l}{Pink} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} &  &  \\
-\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{$\rfrac{6}{14}$} & \multicolumn{1}{c|}{$\rfrac{4}{14}$} & \multicolumn{1}{c|}{$\rfrac{4}{14}$} & \multicolumn{1}{l}{} &  &  \\ \cline{2-4}
-\multicolumn{1}{l|}{} & \multicolumn{3}{c|}{$P\left(Cost\right)$} & \multicolumn{1}{l}{} &  &  \\ \cline{2-4}
-\end{tabular}
+Color & Price & Count & Prob & Entropy \\ \hline
+\multirow{3}{*}{Red} & Low & 2 & $\rfrac{2}{4}$ & \multirow{6}{*}{1.58496} \\ \cline{2-4}
+ & Medium & 1 & $\rfrac{1}{4}$ &  \\ \cline{2-4}
+ & High & 1 & $\rfrac{1}{4}$ &  \\ \cline{1-4}
+\multirow{3}{*}{Black} & Low & 2 & $\rfrac{2}{4}$ &  \\ \cline{2-4}
+ & Medium & 1 & $\rfrac{1}{4}$ &  \\ \cline{2-4}
+ & High & 1 & $\rfrac{1}{4}$ &  \\ \hline
+\multirow{3}{*}{Blue} & Low & 1 & $\rfrac{1}{3}$ & \multirow{6}{*}{1.5} \\ \cline{2-4}
+ & Medium & 1 & $\rfrac{1}{3}$ &  \\ \cline{2-4}
+ & High & 1 & $\rfrac{1}{3}$ &  \\ \cline{1-4}
+\multirow{3}{*}{Pink} & Low & 2 & $\rfrac{1}{3}$ &  \\ \cline{2-4}
+ & Medium & 1 & $\rfrac{1}{3}$ &  \\ \cline{2-4}
+ & High & 1 & $\rfrac{1}{3}$ &  \\ \hline
+\end{tabu}
 \end{table}
 
 
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+\centering
+\caption{My caption}
+\begin{tabu}{|c|c|c|c|c|}
+\hline
+Weight & Price & Count & Prob & Entropy \\ \hline
+\multirow{3}{*}{Light} & Low & 1 & $\rfrac{1}{4}$ & \multirow{3}{*}{0.811278} \\ \cline{2-4}
+ & Medium & 0 & 0 &  \\ \cline{2-4}
+ & High & 3 & $\rfrac{3}{4}$ &  \\ \hline
+\multirow{3}{*}{Average} & Low & 0 & 0 & \multirow{3}{*}{0.0} \\ \cline{2-4}
+ & Medium & 4 & $\rfrac{4}{4}$ &  \\ \cline{2-4}
+ & High & 0 & 0 &  \\ \hline
+\multirow{3}{*}{Heavy} & Low & 5 & $\rfrac{5}{6}$ & \multirow{3}{*}{0.650022} \\ \cline{2-4}
+ & Medium & 0 & 0 &  \\ \cline{2-4}
+ & High & 1 & $\rfrac{1}{6}$ &  \\ \hline
+\end{tabu}
+\end{table}
 
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabu}{|c|c|c|}
+\hline
+Attribute & Gain     & Selected                \\ \hline
+Color     & 0.020249 & \multirow{2}{*}{Weight} \\ \cline{1-2}
+Weight    & 1.04629  &                         \\ \hline
+\end{tabu}
+\end{table}
 \end{document}
