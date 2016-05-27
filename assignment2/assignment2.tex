@@ -1,0 +1,108 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage[pdftex]{graphicx}
+\usepackage{listings}
+\usepackage{alltt}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{afterpage}
+\usepackage{caption}
+\usepackage[english]{babel}
+\usepackage[autostyle, english = american]{csquotes}
+\usepackage{tabu}
+\usepackage{siunitx}
+\usepackage{multirow}
+
+\sisetup{
+  tight-spacing = true,
+  round-mode = places
+}
+
+\def\precision{3} 
+
+\MakeOuterQuote{"}
+
+\tabulinesep=1.0mm
+\newcommand*\rfrac[2]{{}^{#1}\!/_{#2}}
+
+\begin{document}
+
+\begin{center}
+	\large{John Berlin} \large{CS773: Data Mining and Security} \large{Assignment 2}
+\end{center}
+Q1. Work and results for Q1
+
+A) As seen in the tables below the correct rule choice is Weight.
+\begin{center}
+\begin{tabu}{|c|l|l|l|l|lclclclc|lclc|l|}
+\hline
+\multicolumn{6}{|c|}{\multirow{2}{*}{Weight}} & \multicolumn{6}{c|}{Cost} & \multicolumn{6}{c|}{Error} \\
+\multicolumn{6}{|c|}{} & \multicolumn{2}{c}{Low} & \multicolumn{2}{c}{Medium} & \multicolumn{2}{c|}{High} & \multicolumn{2}{c}{Low} & \multicolumn{2}{c}{Medium} & \multicolumn{2}{c|}{High} \\ \hline
+\multicolumn{6}{|c|}{Light} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{0} & \multicolumn{2}{c|}{3} & \multicolumn{2}{c|}{$\rfrac{3}{4}$} & \multicolumn{2}{c|}{0} & \multicolumn{2}{c|}{$\rfrac{1}{4}$} \\
+\multicolumn{6}{|c|}{Average} & \multicolumn{2}{c|}{0} & \multicolumn{2}{c|}{4} & \multicolumn{2}{c|}{0} & \multicolumn{2}{c|}{0} & \multicolumn{2}{c|}{$\rfrac{0}{4}$} & \multicolumn{2}{c|}{0} \\
+\multicolumn{6}{|c|}{Heavy} & \multicolumn{2}{c|}{5} & \multicolumn{2}{c|}{0} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{$\rfrac{1}{6}$} & \multicolumn{2}{c|}{0} & \multicolumn{2}{c|}{$\rfrac{5}{6}$} \\ \hline
+\multicolumn{18}{|c|}{1 Rule Calculation} \\
+\multicolumn{6}{|c}{Rule} & \multicolumn{6}{c}{Correct} & \multicolumn{6}{c|}{Error} \\ \hline
+\multicolumn{6}{|c|}{Light $\to$ High} & \multicolumn{6}{c|}{$\rfrac{3}{14}$} & \multicolumn{6}{c|}{$\rfrac{1}{14}$} \\
+\multicolumn{6}{|c|}{Average $\to$ Medium} & \multicolumn{6}{c|}{$\rfrac{4}{14}$} & \multicolumn{6}{c|}{$\rfrac{0}{14}$} \\
+\multicolumn{6}{|c|}{Heavy $\to$ Low} & \multicolumn{6}{c|}{$\rfrac{5}{14}$} & \multicolumn{6}{c|}{$\rfrac{1}{14}$} \\ \hline
+\multicolumn{12}{|c|}{Total Correct: $\rfrac{12}{14}$} & \multicolumn{6}{c|}{Total Error: $\rfrac{2}{14}$} \\ \hline
+\end{tabu}
+\end{center}
+
+\begin{center}
+\begin{tabu}{|c|l|l|l|l|lclclclc|lclc|l|}
+\hline
+\multicolumn{6}{|c|}{\multirow{2}{*}{Color}} & \multicolumn{6}{c|}{Cost} & \multicolumn{6}{c|}{Error} \\
+\multicolumn{6}{|c|}{} & \multicolumn{2}{c}{Low} & \multicolumn{2}{c}{Medium} & \multicolumn{2}{c|}{High} & \multicolumn{2}{c}{Low} & \multicolumn{2}{c}{Medium} & \multicolumn{2}{c|}{High} \\ \hline
+\multicolumn{6}{|c|}{Red} & \multicolumn{2}{c|}{2} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{$\rfrac{1}{2}$} & \multicolumn{2}{c|}{$\rfrac{3}{4}$} & \multicolumn{2}{c|}{$\rfrac{3}{4}$} \\ 
+\multicolumn{6}{|c|}{Black} & \multicolumn{2}{c|}{2} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{$\rfrac{1}{2}$} & \multicolumn{2}{c|}{$\rfrac{3}{4}$} & \multicolumn{2}{c|}{$\rfrac{3}{4}$} \\
+\multicolumn{6}{|c|}{Blue} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{$\rfrac{2}{3}$} & \multicolumn{2}{c|}{$\rfrac{2}{3}$} & \multicolumn{2}{c|}{$\rfrac{2}{3}$} \\ 
+\multicolumn{6}{|c|}{Pink} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{1} & \multicolumn{2}{c|}{$\rfrac{2}{3}$} & \multicolumn{2}{c|}{$\rfrac{2}{3}$} & \multicolumn{2}{c|}{$\rfrac{2}{3}$} \\ \hline
+\multicolumn{18}{|c|}{1 Rule Calculation} \\
+\multicolumn{6}{|c}{Rule} & \multicolumn{6}{c}{Correct} & \multicolumn{6}{c|}{Error} \\ \hline
+\multicolumn{6}{|c|}{Red $\to$ Low} & \multicolumn{6}{c|}{$\rfrac{2}{14}$} & \multicolumn{6}{c|}{$\rfrac{2}{14}$} \\ 
+\multicolumn{6}{|c|}{Black $\to$ Low} & \multicolumn{6}{c|}{$\rfrac{2}{14}$} & \multicolumn{6}{c|}{$\rfrac{2}{14}$} \\ 
+\multicolumn{6}{|c|}{Blue $\to$ Medium*} & \multicolumn{6}{c|}{$\rfrac{1}{14}$} & \multicolumn{6}{c|}{$\rfrac{2}{14}$} \\ 
+\multicolumn{6}{|c|}{Pink $\to$ Medium*} & \multicolumn{6}{c|}{$\rfrac{1}{14}$} & \multicolumn{6}{c|}{$\rfrac{2}{14}$} \\ \hline
+\multicolumn{12}{|c|}{Total Correct: $\rfrac{6}{14}$} & \multicolumn{6}{c|}{Total Error: $\rfrac{8}{14}$} \\ \hline
+\end{tabu}
+\end{center}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{llllllllllllllllll}
+\cline{1-7}
+\multicolumn{1}{|l|}{\multirow{2}{*}{Weight}} & \multicolumn{3}{l|}{Cost} & \multicolumn{3}{l|}{$P\left(Cost | Weight\right)$} &  &  &  &  &  &  &  &  &  &  &  \\
+\multicolumn{1}{|l|}{} & Low & Medium & \multicolumn{1}{l|}{High} & Low & Medium & \multicolumn{1}{l|}{High} &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-7}
+\multicolumn{1}{|l|}{Ligh} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{3} &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\multicolumn{1}{|l|}{Average} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{0} &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+\multicolumn{1}{|l|}{Heavy} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-4}
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
+ &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & 
+\end{tabular}
+\end{table}
+
+
+
+
+\end{document}

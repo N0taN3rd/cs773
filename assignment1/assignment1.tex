@@ -1,48 +1,57 @@
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,12pt]{article}
 \usepackage[pdftex]{graphicx}
 \usepackage{listings}
 \usepackage{alltt}
 \usepackage{color}
 \usepackage{amsmath}
-\usepackage{hyperref}
-\usepackage{pgfplotstable}
 \usepackage{float}
 \usepackage{caption}
-\usepackage{makeidx}
-\usepackage[utf8]{inputenc}
-\usepackage [english]{babel}
-\usepackage [autostyle, english = american]{csquotes}
-\usepackage{adjustbox}
+\usepackage[english]{babel}
+\usepackage[autostyle, english = american]{csquotes}
+\usepackage{tabu}
+\usepackage{booktabs,siunitx}
+
+\sisetup{
+  tight-spacing = true,
+  round-mode = places
+}
+
+\def\precision{3} 
+
 \MakeOuterQuote{"}
+
+\tabulinesep=1.2mm
 
 \begin{document}
 
+\newcolumntype{Z}{S[round-precision=\precision]}
+
+
 \begin{center}
-\Huge{Assignment 1}
-
-\Large{CS773: Data Mining and Security}
-
-\Large{Summer 2016}
-
-\Large{John Berlin}
+	\large{John Berlin} \large{CS773: Data Mining and Security} \large{Assignment 2}
 \end{center}
 
+\begin{center}
+	\begin{tabu}{|l|l|l|l|}
+		\hline
+		\everyrow{\hline}
+        {Item\#} &{Color} &{Weight} &{Price} \\
+		1      & Red   & Light   & Low    \\
+		2      & Black & Average & Medium \\
+		3      & Pink  & Average & Medium \\
+		4      & Blue  & Light   & High   \\
+		5      & Black & Heavy   & Low    \\
+		6      & Red   & Heavy   & Low    \\
+		7      & Black & Light   & High   \\
+		8      & Blue  & Heavy   & Low    \\
+		9      & Blue  & Average & Medium \\
+		10     & Red   & Average & Medium \\
+		11     & Pink  & Light   & High   \\
+		12     & Pink  & Heavy   & Low    \\
+		13     & Black & Heavy   & Low    \\
+		14     & Red   & Heavy   & High  
+	\end{tabu}		
+\end{center}
 
-
-\begin{table}[h]
-\centering
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|}
-\hline
-Classifier            & T1 & T2 & T3 & T4 & T5 & T6 & \%Match & \%Mismatch \\ \hline
-NaiveBayesMultinomial &    &    &    &    &    &    &         &            \\ \hline
-Logistic              &    &    &    &    &    &    &         &            \\ \hline
-IBk                   &    &    &    &    &    &    &         &            \\ \hline
-DecisionTable         &    &    &    &    &    &    &         &            \\ \hline
-J48                   &    &    &    &    &    &    &         &            \\ \hline
-Majority prediction   &    &    &    &    &    &    &         &            \\ \hline
-\end{tabular}
-\caption{My caption}
-\label{my-label}
-\end{table}
 
 \end{document}

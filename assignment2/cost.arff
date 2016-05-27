@@ -1,0 +1,24 @@
+%
+@relation cost
+
+@attribute color string
+@attribute weight string
+@attribute price {Low,Medium,High}
+
+@data
+Red,Light,Low
+Black,Average,Medium
+Pink,Average,Medium
+Blue,Light,High
+Black,Heavy,Low
+Red,Heavy,Low
+Black,Light,High
+Blue,Heavy,Low
+Blue,Average,Medium
+Red,Average,Medium
+Pink,Light,High
+Pink,Heavy,Low
+Black,Heavy,Low
+Red,Heavy,High
+%
+%
