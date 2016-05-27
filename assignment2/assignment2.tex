@@ -68,6 +68,7 @@ A) As seen in the tables below the correct rule choice is Weight.
 \multicolumn{12}{|c|}{Total Correct: $\rfrac{6}{14}$} & \multicolumn{6}{c|}{Total Error: $\rfrac{8}{14}$} \\ \hline
 \end{tabu}
 \end{center}
+\newpage
 
 % Please add the following required packages to your document preamble:
 % \usepackage{multirow}
@@ -75,33 +76,45 @@ A) As seen in the tables below the correct rule choice is Weight.
 \centering
 \caption{My caption}
 \label{my-label}
-\begin{tabular}{llllllllllllllllll}
-\cline{1-7}
-\multicolumn{1}{|l|}{\multirow{2}{*}{Weight}} & \multicolumn{3}{l|}{Cost} & \multicolumn{3}{l|}{$P\left(Cost | Weight\right)$} &  &  &  &  &  &  &  &  &  &  &  \\
-\multicolumn{1}{|l|}{} & Low & Medium & \multicolumn{1}{l|}{High} & Low & Medium & \multicolumn{1}{l|}{High} &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-7}
-\multicolumn{1}{|l|}{Ligh} & \multicolumn{1}{l|}{1} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{3} &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
-\multicolumn{1}{|l|}{Average} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{4} & \multicolumn{1}{l|}{0} &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
-\multicolumn{1}{|l|}{Heavy} & \multicolumn{1}{l|}{5} & \multicolumn{1}{l|}{0} & \multicolumn{1}{l|}{1} &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\ \cline{1-4}
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  \\
- &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  &  & 
-\end{tabular}
+\begin{tabu}{c|ccc|cll}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Weight}} & \multicolumn{3}{c|}{Cost} & \multicolumn{3}{c|}{\multirow{2}{*}{$P\left(Weight\right)$}} \\
+\multicolumn{1}{|c|}{} & Low & Medium & High & \multicolumn{3}{c|}{} \\ \hline
+\multicolumn{1}{|c|}{Light} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{0} & 3 & \multicolumn{3}{c|}{$\rfrac{4}{14}$} \\
+\multicolumn{1}{|c|}{Average} & \multicolumn{1}{c|}{0} & \multicolumn{1}{c|}{4} & 0 & \multicolumn{3}{c|}{$\rfrac{4}{14}$} \\
+\multicolumn{1}{|c|}{Heavy} & \multicolumn{1}{c|}{5} & \multicolumn{1}{c|}{0} & 1 & \multicolumn{3}{c|}{$\rfrac{6}{14}$} \\ \hline
+\multicolumn{4}{|c|}{$P\left(Weight|Cost\right)$} &  & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{1-4}
+\multicolumn{1}{|c|}{Light} & \multicolumn{1}{c|}{$\rfrac{1}{6}$} & \multicolumn{1}{c|}{$\rfrac{0}{4}$} & $\rfrac{3}{4}$ &  & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{|c|}{Average} & \multicolumn{1}{c|}{$\rfrac{0}{6}$} & \multicolumn{1}{c|}{$\rfrac{4}{4}$} & $\rfrac{0}{4}$ & \multicolumn{1}{l}{} &  &  \\
+\multicolumn{1}{|c|}{Heavy} & \multicolumn{1}{c|}{$\rfrac{5}{6}$} & \multicolumn{1}{c|}{$\rfrac{0}{4}$} & $\rfrac{1}{4}$ & \multicolumn{1}{l}{} &  &  \\ \cline{1-4}
+ & \multicolumn{1}{c|}{$\rfrac{6}{14}$} & \multicolumn{1}{c|}{$\rfrac{4}{14}$} & $\rfrac{4}{14}$ & \multicolumn{1}{l}{} &  &  \\ \cline{2-4}
+\multicolumn{1}{l|}{} & \multicolumn{3}{c|}{$P\left(Cost\right)$} & \multicolumn{1}{l}{} &  &  \\ \cline{2-4}
+\end{tabu}
 \end{table}
 
+% Please add the following required packages to your document preamble:
+% \usepackage{multirow}
+\begin{table}[]
+\centering
+\caption{My caption}
+\label{my-label}
+\begin{tabular}{cccccll}
+\hline
+\multicolumn{1}{|c|}{\multirow{2}{*}{Color}} & \multicolumn{3}{c|}{Cost} & \multicolumn{3}{c|}{\multirow{2}{*}{$P\left(Weight\right)$}} \\
+\multicolumn{1}{|c|}{} & Low & Medium & \multicolumn{1}{c|}{High} & \multicolumn{3}{c|}{} \\ \hline
+\multicolumn{1}{|c|}{Red} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{3}{c|}{$\rfrac{4}{14}$} \\
+\multicolumn{1}{|c|}{Black} & \multicolumn{1}{c|}{2} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{3}{c|}{$\rfrac{4}{14}$} \\
+\multicolumn{1}{|c|}{Blue} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{3}{c|}{$\rfrac{6}{14}$} \\
+\multicolumn{1}{|c|}{Pink} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{1}{c|}{1} & \multicolumn{3}{c|}{} \\ \hline
+\multicolumn{4}{|c|}{$P\left(Cost|Color\right)$} &  & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\ \cline{1-4}
+\multicolumn{1}{|c|}{Red} & \multicolumn{1}{c|}{$\rfrac{1}{6}$} & \multicolumn{1}{c|}{$\rfrac{0}{4}$} & \multicolumn{1}{c|}{$\rfrac{3}{4}$} &  & \multicolumn{1}{c}{} & \multicolumn{1}{c}{} \\
+\multicolumn{1}{|c|}{Black} & \multicolumn{1}{c|}{$\rfrac{0}{6}$} & \multicolumn{1}{c|}{$\rfrac{4}{4}$} & \multicolumn{1}{c|}{$\rfrac{0}{4}$} & \multicolumn{1}{l}{} &  &  \\
+\multicolumn{1}{|c|}{Blue} & \multicolumn{1}{c|}{$\rfrac{5}{6}$} & \multicolumn{1}{c|}{$\rfrac{0}{4}$} & \multicolumn{1}{c|}{$\rfrac{1}{4}$} & \multicolumn{1}{l}{} &  &  \\ \cline{1-4}
+\multicolumn{1}{l}{Pink} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} &  &  \\
+\multicolumn{1}{c|}{} & \multicolumn{1}{c|}{$\rfrac{6}{14}$} & \multicolumn{1}{c|}{$\rfrac{4}{14}$} & \multicolumn{1}{c|}{$\rfrac{4}{14}$} & \multicolumn{1}{l}{} &  &  \\ \cline{2-4}
+\multicolumn{1}{l|}{} & \multicolumn{3}{c|}{$P\left(Cost\right)$} & \multicolumn{1}{l}{} &  &  \\ \cline{2-4}
+\end{tabular}
+\end{table}
 
 
 
